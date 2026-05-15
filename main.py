@@ -54,10 +54,10 @@ from math import log10, sqrt
 # =========================================================
 
 DATASET_FOLDERS = {
-    "Wajah": "dataset/wajah",
-    "PlatNomor": "dataset/plat_nomor",
-    "Dedaunan": "dataset/dedaunan",
-    "Aerial": "dataset/aerial"
+    "wajah": "dataset/wajah",
+    "plat_nomor": "dataset/plat_nomor",
+    "dedaunan": "dataset/dedaunan",
+    "aerial": "dataset/aerial"
 }
 
 OUTPUT_FOLDER = "output"
@@ -287,6 +287,11 @@ def process_image(category_name, image_name, image_path):
 
     base_name = os.path.splitext(image_name)[0]
 
+    # Preprocessing Result
+    save_image(category_name, f"{base_name}_grayscale.jpg", gray)
+    save_image(category_name, f"{base_name}_gaussian_blur.jpg", blur)
+
+    # Edge Detection Result
     save_image(category_name, f"{base_name}_sobel.jpg", sobel_result)
     save_image(category_name, f"{base_name}_prewitt.jpg", prewitt_result)
     save_image(category_name, f"{base_name}_canny.jpg", canny_result)
@@ -295,13 +300,13 @@ def process_image(category_name, image_name, image_path):
     # VISUALISASI
     # =====================================================
 
-    display_results(
-        f"{category_name} - {image_name}",
-        gray,
-        sobel_result,
-        prewitt_result,
-        canny_result
-    )
+    # display_results(
+    #     f"{category_name} - {image_name}",
+    #     gray,
+    #     sobel_result,
+    #     prewitt_result,
+    #     canny_result
+    # )
 
 
 # =========================================================
