@@ -8,7 +8,7 @@ Deskripsi singkat: repository ini berisi skrip pemrosesan citra untuk beberapa k
 
 ## Instalasi
 1. Buka terminal di folder proyek (root repository).
-2. (Opsional) Buat dan aktifkan virtual environment:
+2. Buat dan aktifkan virtual environment:
 
 Windows (PowerShell/CMD):
 ```powershell
